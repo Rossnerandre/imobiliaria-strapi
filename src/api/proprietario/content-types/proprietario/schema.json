@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proprietarios",
+  "info": {
+    "singularName": "proprietario",
+    "pluralName": "proprietarios",
+    "displayName": "proprietario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "documento": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "tel1": {
+      "type": "string"
+    },
+    "tel2": {
+      "type": "string"
+    },
+    "tel3": {
+      "type": "string"
+    },
+    "imovels": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::imovel.imovel",
+      "mappedBy": "proprietario"
+    }
+  }
+}

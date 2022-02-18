@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cidades",
+  "info": {
+    "singularName": "cidade",
+    "pluralName": "cidades",
+    "displayName": "cidade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "bairros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bairro.bairro",
+      "mappedBy": "cidade"
+    },
+    "imovel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::imovel.imovel",
+      "inversedBy": "cidades"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bairros",
+  "info": {
+    "singularName": "bairro",
+    "pluralName": "bairros",
+    "displayName": "bairro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "cidade": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cidade.cidade",
+      "inversedBy": "bairros"
+    },
+    "imovel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::imovel.imovel",
+      "inversedBy": "bairros"
+    }
+  }
+}

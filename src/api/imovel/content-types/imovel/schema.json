@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imovels",
+  "info": {
+    "singularName": "imovel",
+    "pluralName": "imovels",
+    "displayName": "imovel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descricacaoCard": {
+      "type": "string",
+      "required": true,
+      "maxLength": 52
+    },
+    "banheiro": {
+      "type": "integer"
+    },
+    "quarto": {
+      "type": "integer"
+    },
+    "suite": {
+      "type": "integer"
+    },
+    "vagas": {
+      "type": "integer"
+    },
+    "areaConstruida": {
+      "type": "decimal"
+    },
+    "areaTotal": {
+      "type": "decimal"
+    },
+    "dimensoes": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "decimal"
+    },
+    "condominio": {
+      "type": "decimal"
+    },
+    "localizacao": {
+      "type": "string"
+    },
+    "destaque": {
+      "type": "boolean"
+    },
+    "sobre": {
+      "type": "text"
+    },
+    "bairros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bairro.bairro",
+      "mappedBy": "imovel"
+    },
+    "cidades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cidade.cidade",
+      "mappedBy": "imovel"
+    },
+    "tipo_imovels": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tipo-imovel.tipo-imovel",
+      "mappedBy": "imovel"
+    },
+    "caracteristicas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::caracteristica.caracteristica",
+      "inversedBy": "imovels"
+    },
+    "proprietario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proprietario.proprietario",
+      "private": true,
+      "inversedBy": "imovels"
+    }
+  }
+}

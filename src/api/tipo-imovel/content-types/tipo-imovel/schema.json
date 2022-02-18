@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipo_imovels",
+  "info": {
+    "singularName": "tipo-imovel",
+    "pluralName": "tipo-imovels",
+    "displayName": "tipoImovel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string"
+    },
+    "imovel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::imovel.imovel",
+      "inversedBy": "tipo_imovels"
+    }
+  }
+}

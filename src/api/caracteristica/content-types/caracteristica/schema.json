@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "caracteristicas",
+  "info": {
+    "singularName": "caracteristica",
+    "pluralName": "caracteristicas",
+    "displayName": "caracteristica",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "imovels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::imovel.imovel",
+      "mappedBy": "caracteristicas"
+    }
+  }
+}
